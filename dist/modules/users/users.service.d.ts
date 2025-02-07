@@ -19,6 +19,11 @@ export declare class UsersService {
         totalPages: number;
     }>;
     findOne(id: number): string;
+    findByEmail(email: string): Promise<mongoose.Document<unknown, {}, User> & User & {
+        _id: mongoose.Types.ObjectId;
+    } & {
+        __v: number;
+    }>;
     update(updateUserDto: UpdateUserDto): Promise<mongoose.UpdateWriteOpResult>;
     remove(_id: string): Promise<mongoose.mongo.DeleteResult>;
 }

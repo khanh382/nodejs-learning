@@ -21,6 +21,7 @@ const order_detail_module_1 = require("./modules/order.detail/order.detail.modul
 const orders_module_1 = require("./modules/orders/orders.module");
 const restaurants_module_1 = require("./modules/restaurants/restaurants.module");
 const reviews_module_1 = require("./modules/reviews/reviews.module");
+const auth_module_1 = require("./auth/auth.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -43,7 +44,8 @@ exports.AppModule = AppModule = __decorate([
                     uri: configService.get('MONGODB_URI'),
                 }),
                 inject: [config_1.ConfigService],
-            })
+            }),
+            auth_module_1.AuthModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
